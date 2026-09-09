@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ Braian - Sets & Shows en Vivo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Encabezado / Hero -->
+  <header>
+    <div class="hero-content">
+      <h1 class="dj-title">DJ BRAIAN</h1>
+      <p class="tagline">Música, Show y la mejor energía para tu evento</p>
+      <a href="#contacto" class="btn-main">Consultar Fecha</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Sobre Mí y Estilos -->
+    <section class="card">
+      <h2>🎧 Sobre Mí & Estilos</h2>
+      <p>Llevo la mejor selección musical a tu fiesta. Sets en vivo adaptados a todo tipo de eventos: cumpleaños de 15, casamientos, egresados y fiestas privadas.</p>
+      
+      <div class="genres">
+        <span class="badge">Cumbia & Reggaeton</span>
+        <span class="badge">RKT & Trap</span>
+        <span class="badge">Electrónica / House</span>
+        <span class="badge">Clásicos 80s / 90s / 2000s</span>
+      </div>
+    </section>
+
+    <!-- Escuchá mis Sets / Demos -->
+    <section class="card">
+      <h2>🎵 Escuchá mis Sets</h2>
+      <p>Hacé clic para reproducir un enganchado demo:</p>
+      
+      <div class="audio-player">
+        <p><strong>Set Enganchado 2026 - Cumbia & RKT</strong></p>
+        <audio controls>
+          <!-- Reemplazar set.mp3 por el archivo de audio real dentro de la carpeta /audio -->
+          <source src="audio/set.mp3" type="audio/mpeg">
+          Tu navegador no soporta el reproductor de audio.
+        </audio>
+      </div>
+    </section>
+
+    <!-- Galería de Eventos -->
+    <section class="card">
+      <h2>📸 Galería de Eventos</h2>
+      <div class="gallery-grid">
+        <img src="images/evento1.jpg" alt="Fiesta en vivo" onclick="abrirImagen(this.src)">
+        <img src="images/evento2.jpg" alt="Cabina de DJ Braian" onclick="abrirImagen(this.src)">
+        <img src="images/evento3.jpg" alt="Luces y pista de baile" onclick="abrirImagen(this.src)">
+      </div>
+    </section>
+
+    <!-- Cotizador y Contacto por WhatsApp -->
+    <section id="contacto" class="card">
+      <h2>📲 Cotizá tu Evento</h2>
+      <p>Completá los datos para enviarle un mensaje directo a Braian por WhatsApp:</p>
+
+      <form id="formCotizar">
+        <label for="nombre">Tu Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ej: María Rosa" required>
+
+        <label for="tipoEvento">Tipo de Evento:</label>
+        <select id="tipoEvento">
+          <option value="Cumpleaños de 15">Cumpleaños de 15</option>
+          <option value="Casamiento">Casamiento</option>
+          <option value="Fiesta Privada">Fiesta Privada / Cumpleaños</option>
+          <option value="Evento Empresarial">Evento Empresarial</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label for="fecha">Fecha del Evento:</label>
+        <input type="date" id="fecha" required>
+
+        <label for="lugar">Lugar / Localidad:</label>
+        <input type="text" id="lugar" placeholder="Ej: Tapso / Catamarca" required>
+
+        <button type="button" onclick="enviarWhatsapp()" class="btn-whatsapp">
+          🟢 Enviar Consulta por WhatsApp
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 DJ Braian - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Modal para ver fotos ampliadas -->
+  <div id="modalFoto" class="modal" onclick="cerrarImagen()">
+    <span class="close-btn">&times;</span>
+    <img id="imgModal" src="" alt="Foto ampliada">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

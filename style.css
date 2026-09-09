@@ -1,0 +1,203 @@
+/* RESET Y BASE MODO NOCHE / FIESTA */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0e15;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* HEADER / HERO */
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(13, 14, 21, 1)), url('images/banner-dj.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #00f0ff;
+}
+
+.dj-title {
+  font-size: 3.5em;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #ff007f;
+  letter-spacing: 3px;
+}
+
+.tagline {
+  font-size: 1.2em;
+  margin: 15px 0 25px 0;
+  color: #cccccc;
+}
+
+.btn-main {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff007f;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn-main:hover {
+  transform: scale(1.05);
+  background: #e00070;
+}
+
+/* CONTENEDOR Y TARJETAS */
+.container {
+  max-width: 900px;
+  margin: -40px auto 40px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.card {
+  background: #161824;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #282c40;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card h2 {
+  color: #00f0ff;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #282c40;
+  padding-bottom: 8px;
+}
+
+/* ETIQUETAS DE GÉNEROS */
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.badge {
+  background: #23273a;
+  color: #00f0ff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid #00f0ff;
+}
+
+/* REPRODUCTOR DE AUDIO */
+.audio-player {
+  background: #0d0e15;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* GALERÍA */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* FORMULARIO Y BOTÓN WHATSAPP */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #0d0e15;
+  color: white;
+  font-size: 1em;
+}
+
+.btn-whatsapp {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebd56;
+}
+
+/* MODAL DE FOTO */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.9em;
+}
