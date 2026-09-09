@@ -40,7 +40,6 @@
       <div class="audio-player">
         <p><strong>Set Enganchado 2026 - Cumbia & RKT</strong></p>
         <audio controls>
-          <!-- Reemplazar set.mp3 por el archivo de audio real dentro de la carpeta /audio -->
           <source src="audio/set.mp3" type="audio/mpeg">
           Tu navegador no soporta el reproductor de audio.
         </audio>
@@ -51,9 +50,10 @@
     <section class="card">
       <h2>📸 Galería de Eventos</h2>
       <div class="gallery-grid">
-        <img src="images/evento1.jpg" alt="Fiesta en vivo" onclick="abrirImagen(this.src)">
-        <img src="images/evento2.jpg" alt="Cabina de DJ Braian" onclick="abrirImagen(this.src)">
-        <img src="images/evento3.jpg" alt="Luces y pista de baile" onclick="abrirImagen(this.src)">
+        <img src="images/imagen1.jpg" alt="DJ Braian en vivo" onclick="abrirGaleria(0)">
+        <img src="images/evento1.jpg" alt="Fiesta en vivo" onclick="abrirGaleria(1)">
+        <img src="images/evento2.jpg" alt="Cabina de DJ Braian" onclick="abrirGaleria(2)">
+        <img src="images/evento3.jpg" alt="Luces y pista de baile" onclick="abrirGaleria(3)">
       </div>
     </section>
 
@@ -94,9 +94,13 @@
   </footer>
 
   <!-- Modal para ver fotos ampliadas -->
-  <div id="modalFoto" class="modal" onclick="cerrarImagen()">
-    <span class="close-btn">&times;</span>
-    <img id="imgModal" src="" alt="Foto ampliada">
+  <div id="modalFoto" class="modal">
+    <span class="close-btn" onclick="cerrarImagen()">&times;</span>
+    <button class="nav-btn prev-btn" onclick="cambiarFoto(-1)">&#10094;</button>
+    <div class="modal-content-img">
+      <img id="imgModal" src="" alt="Foto ampliada">
+    </div>
+    <button class="nav-btn next-btn" onclick="cambiarFoto(1)">&#10095;</button>
   </div>
 
   <script src="script.js"></script>

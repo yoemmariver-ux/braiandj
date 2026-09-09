@@ -1,7 +1,53 @@
-// NUMERO DE TELEFONO DE BRAIAN (Con código de país, ej: 549383...)
+// NUMERO DE TELEFONO DE BRAIAN (Con código de país)
 const TELEFONO_BRAIAN = "5493834000000"; 
 
-// Función para armar y enviar la consulta por WhatsApp
+// LISTA DE FOTOS PARA LA GALERÍA
+const fotosGaleria = [
+  { src: "images/imagen1.jpg", caption: "DJ Braian - Show en vivo" },
+  { src: "images/evento1.jpg", caption: "Fiesta y pista de baile" },
+  { src: "images/evento2.jpg", caption: "Cabina de DJ Braian" },
+  { src: "images/evento3.jpg", caption: "Luces y ambientación" }
+];
+
+let indiceFotoActual = 0;
+
+// FUNCIONES DE LA GALERÍA
+function abrirGaleria(indice) {
+  indiceFotoActual = indice;
+  mostrarFotoModal();
+  document.getElementById("modalFoto").style.display = "flex";
+}
+
+function mostrarFotoModal() {
+  const imgModal = document.getElementById("imgModal");
+  imgModal.src = fotosGaleria[indiceFotoActual].src;
+}
+
+function cambiarFoto(direccion) {
+  indiceFotoActual += direccion;
+  if (indiceFotoActual < 0) {
+    indiceFotoActual = fotosGaleria.length - 1;
+  } else if (indiceFotoActual >= fotosGaleria.length) {
+    indiceFotoActual = 0;
+  }
+  mostrarFotoModal();
+}
+
+function cerrarImagen() {
+  document.getElementById("modalFoto").style.display = "none";
+}
+
+// Navegación con teclado para la galería
+document.addEventListener("keydown", function(event) {
+  const modal = document.getElementById("modalFoto");
+  if (modal && modal.style.display === "flex") {
+    if (event.key === "ArrowLeft") cambiarFoto(-1);
+    if (event.key === "ArrowRight") cambiarFoto(1);
+    if (event.key === "Escape") cerrarImagen();
+  }
+});
+
+// FUNCIÓN PARA ENVIAR PRESUPUESTO A WHATSAPP
 function enviarWhatsapp() {
   const nombre = document.getElementById("nombre").value.trim();
   const tipoEvento = document.getElementById("tipoEvento").value;
@@ -13,28 +59,12 @@ function enviarWhatsapp() {
     return;
   }
 
-  // Formatear mensaje para WhatsApp
   const mensaje = `Hola DJ Braian! Mi nombre es *${nombre}*. Quisiera consultar disponibilidad y presupuesto para un evento:\n\n` +
                   `🎉 *Tipo de evento:* ${tipoEvento}\n` +
                   `📅 *Fecha:* ${fecha}\n` +
                   `📍 *Lugar:* ${lugar}\n\n` +
                   `¡Quedo a la espera de tu respuesta!`;
 
-  // Crear el enlace a WhatsApp Web / App
   const urlWhatsapp = `https://wa.me/${TELEFONO_BRAIAN}?text=${encodeURIComponent(mensaje)}`;
-
-  // Abrir WhatsApp en una nueva pestaña
   window.open(urlWhatsapp, "_blank");
-}
-
-// Funciones para ampliar fotos de la galería
-function abrirImagen(src) {
-  const modal = document.getElementById("modalFoto");
-  const imgModal = document.getElementById("imgModal");
-  modal.style.display = "flex";
-  imgModal.src = src;
-}
-
-function cerrarImagen() {
-  document.getElementById("modalFoto").style.display = "none";
 }
