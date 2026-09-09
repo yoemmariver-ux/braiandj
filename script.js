@@ -1,9 +1,8 @@
 // NUMERO DE TELEFONO DE BRAIAN (Con código de país)
 const TELEFONO_BRAIAN = "5493834000000"; 
 
-// LISTA DE FOTOS PARA LA GALERÍA
+// LISTA DE FOTOS PARA LA GALERÍA DE EVENTOS
 const fotosGaleria = [
-  { src: "images/imagen1.jpg", caption: "DJ Braian - Show en vivo" },
   { src: "images/evento1.jpg", caption: "Fiesta y pista de baile" },
   { src: "images/evento2.jpg", caption: "Cabina de DJ Braian" },
   { src: "images/evento3.jpg", caption: "Luces y ambientación" }
